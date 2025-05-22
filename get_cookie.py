@@ -6,7 +6,7 @@
         - 搭配该项目使用 https://github.com/chen310/BilibiliPotPlayer
 
     使用方法：
-        1. 安装Python，并安装所需要的 库
+        1. 安装Python，并安装所需要的库
         2. 修改参数config_file，指向PotPlayer的配置文件，也可以直接复制到配置文件路径
         3. 执行脚本，扫描二维码，扫描成功后，会自动保存登陆凭证到PotPlayer的配置文件
         4. 关闭PotPlayer，重新打开，即可正常使用B站登录功能
@@ -22,7 +22,7 @@
 
     时间：2025-05-22
     作者：lyd
-    github：https://github.com/luyuduan/get_bilibili_cookie
+    github: https://github.com/luyuduan/get_bilibili_cookie
 
 """
 
@@ -62,7 +62,10 @@ class LoginManager:
 
         cookie_path = "./cookie"
         self.temp_cookie = cookie_path + "/bilibili.cookies"
-        self.file_path = config_file
+
+        if not path.exists(config_file):
+            raise FileExistsError(f"配置文件不存在，请指定配置文件路径：{config_file}")
+        self.config_file = config_file
 
         # 缓存文件
         os.makedirs(cookie_path, exist_ok=True)
@@ -210,10 +213,10 @@ class LoginManager:
         # 收集cookies中config需要的关键信息
         s = f"SESSDATA={self.session.cookies.get_dict().get('SESSDATA')}"
 
-        with open(self.file_path, "r", encoding="utf-8") as f:
+        with open(self.config_file, "r", encoding="utf-8") as f:
             config_dict = json.load(f)
             config_dict["cookie"] = s
-        with open(self.file_path, "w", encoding="utf-8") as f:
+        with open(self.config_file, "w", encoding="utf-8") as f:
             json.dump(config_dict, f, indent=4)
 
         self.info.set("登录成功！配置文件已更新")
