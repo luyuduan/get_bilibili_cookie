@@ -1,5 +1,9 @@
 # get_bilibili_cookie
 
+编写时间：2025-05-22
+作者：lyd
+[git仓库](https://github.com/luyuduan/get_bilibili_cookie)
+
 
 
 ## 功能
@@ -15,8 +19,6 @@
 2. 执行脚本，扫描二维码，扫描成功后，会自动保存登陆凭证到PotPlayer的配置文件
 3. 关闭PotPlayer，重新打开，即可正常使用B站登录功能
 
-代码参考： [【【python爬虫】获取B站cookie教程，生成cookie文件，各大网站（某乎，某音，某博等）cookie均可保存（附源码）】](https://www.bilibili.com/video/BV1Ue41197vz/?share_source=copy_web&vd_source=b22e943fdbf4809cf6c3520fdfb6ed86)
-
 
 
 ## 注意事项
@@ -27,9 +29,9 @@
 
 
 
-## 其他
+## 参考
 
-编写时间：2025-05-22
-作者：lyd
-[git仓库](https://github.com/luyuduan/get_bilibili_cookie)
+-   [【【python爬虫】获取B站cookie教程，生成cookie文件，各大网站（某乎，某音，某博等）cookie均可保存（附源码）】](https://www.bilibili.com/video/BV1Ue41197vz/?share_source=copy_web&vd_source=b22e943fdbf4809cf6c3520fdfb6ed86)
+
+
 
